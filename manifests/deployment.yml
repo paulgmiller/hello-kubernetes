@@ -1,0 +1,16 @@
+apiVersion : apps/v1beta1
+kind: Deployment
+metadata:
+  name: "paulcnitest"
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: "paulcnitest"
+    spec:
+      containers:
+        - name: "paulcnitest"
+          image: "paultest.azurecr.io/paulcnitest"
+          ports:
+          - containerPort: 80
